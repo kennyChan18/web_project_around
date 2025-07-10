@@ -1,0 +1,67 @@
+.content__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.card {
+  display: grid;
+  background-color: #fff;
+  grid-auto-rows: auto 1fr;
+  border-radius: 10px;
+}
+
+.card__image {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.card__footer {
+  padding: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+
+.card__title {
+  font-family: "Inter";
+  font-size: 21px;
+  font-weight: 900;
+  width: calc(100% - 32px);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.card__like {
+  width: 21px;
+  height: 19px;
+  background: url(../images/heart.svg);
+  transition: all 0.25s ease-out;
+}
+
+.card__like:hover {
+  transform: scale(1.1);
+}
+
+.card__like:active {
+  transform: translateY(3px) scale(1.1);
+  opacity: 100%;
+  background: url(../images/heart-active.svg);
+}
+
+/* --- --- */
+@media screen and (max-width: 800px) {
+  .content__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .content__grid {
+    grid-template-columns: 1fr;
+  }
+}

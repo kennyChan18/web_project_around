@@ -1,0 +1,123 @@
+.header {
+  padding: 32px 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  grid-template-areas: "image profile button";
+  align-items: center;
+  gap: 30px;
+  justify-items: end;
+}
+
+.header__avatar {
+  grid-area: image;
+  max-width: 120px;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+}
+
+.header__profile {
+  grid-area: profile;
+  color: #fff;
+  font-family: Inter;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  align-items: baseline;
+  gap: 6px 16px;
+}
+
+.header__profile-name {
+  font-weight: 500;
+  font-size: 36px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.header__profile-button {
+  height: 24px;
+  width: 24px;
+  background: url(../images/edit-button.svg);
+  background-size: 50%;
+  padding: 3px;
+  border: 1px solid #fff;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.header__profile-tag {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+  grid-column: span 2;
+}
+
+.header__add-button {
+  max-width: 150px;
+  height: 50px;
+  grid-area: button;
+  background: url(../images/add-button.svg);
+  background-position: center;
+  background-size: initial;
+  background-repeat: no-repeat;
+  border: 2px solid #fff;
+  width: 100%;
+  min-width: 50px;
+  border-radius: 3px;
+}
+
+/* --- --- */
+@media screen and (max-width: 800px) {
+  .header {
+    padding: 24px 0;
+    gap: 16px;
+  }
+
+  .header__profile-name {
+    font-size: 26px;
+  }
+
+  .header__profile-tag {
+    font-size: 16px;
+  }
+
+  .header__avatar {
+    max-width: 100px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header {
+    padding: 36px 0;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "image"
+      "profile"
+      "button";
+    justify-items: center;
+    gap: 30px;
+  }
+
+  .header__avatar {
+    max-width: 120px;
+  }
+
+  .header__profile-name {
+    font-size: 22px;
+  }
+
+  .header__profile-tag {
+    justify-self: center;
+    font-size: 14px;
+  }
+
+  .header__profile-button {
+    width: 18px;
+    height: 18px;
+  }
+
+  .header__add-button {
+    max-width: 100%;
+  }
+}

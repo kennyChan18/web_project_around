@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Portafolio de KENNY en TripleTen" />
+    <meta name="keywords" content="html, css, javascript, responsive" />
+    <meta name="author" content="Kenny Chan" />
+    <title>Around the World</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="./pages/index.css" />
+  </head>
+  <body>
+    <div class="page">
+      <div class="popup">
+        <div class="popup__overlay"></div>
+        <form class="popup__container">
+          <button class="popup__close-button button"></button>
+          <p class="popup__description">Editar perfil</p>
+          <fieldset class="popup__form">
+            <input
+              class="popup__form-element"
+              placeholder="Nombre"
+              type="text"
+              id="input-name"
+            />
+            <input
+              class="popup__form-element"
+              placeholder="Acerca de mí"
+              type="text"
+              id="input-tag"
+            />
+          </fieldset>
+          <button class="popup__save-button button" type="submit">
+            Guardar
+          </button>
+        </form>
+      </div>
+      <nav class="nav">
+        <img
+          class="nav__logo"
+          src="images/logo.svg"
+          alt="logo around the US "
+        />
+      </nav>
+      <header class="header">
+        <img
+          class="header__avatar"
+          src="images/profile-image.jpg"
+          alt="foto de perfil de algo o alguien"
+        />
+        <div class="header__profile">
+          <h2 class="header__profile-name">Kenny Chan</h2>
+          <button class="header__profile-button button"></button>
+          <p class="header__profile-tag">Diseñador web</p>
+        </div>
+        <button class="header__add-button button" type="submit"></button>
+      </header>
+      <main class="content">
+        <div class="content__grid">
+          <div class="card">
+            <img
+              class="card__image"
+              src="images/yosemite.jpg"
+              alt="pinos en el Valle de Yosemite"
+            />
+            <div class="card__footer">
+              <p class="card__title">Valle de Yosemite</p>
+              <button class="card__like button"></button>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              class="card__image"
+              src="images/lago-louise.jpg"
+              alt="Agua cristalina del Lago Louise"
+            />
+            <div class="card__footer">
+              <p class="card__title">Lago Louise</p>
+              <button class="card__like button"></button>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              class="card__image"
+              src="images/montaña-calva.jpg"
+              alt="Atardecer en las Montañas Calvas"
+            />
+            <div class="card__footer">
+              <p class="card__title">Montañas Calvas</p>
+              <button class="card__like button"></button>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              class="card__image"
+              src="images/latemar.jpg"
+              alt="Anochecer en las Montañas de Latemar"
+            />
+            <div class="card__footer">
+              <p class="card__title">Latemar</p>
+              <button class="card__like button"></button>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              class="card__image"
+              src="images/vanois.jpg"
+              alt="lago de Vanoise National Park"
+            />
+            <div class="card__footer">
+              <p class="card__title">Vanoise National Park</p>
+              <button class="card__like button"></button>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              class="card__image"
+              src="images/lago_di.jpg"
+              alt="Canoas en el lago de Braies"
+            />
+            <div class="card__footer">
+              <p class="card__title">Lago de Braies</p>
+              <button class="card__like button"></button>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer class="footer">
+        <p class="footer__copyright">2025 Kenny Chan</p>
+      </footer>
+    </div>
+    <script src="./scripts/index.js"></script>
+  </body>
+</html>
