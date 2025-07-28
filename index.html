@@ -12,124 +12,123 @@
   </head>
   <body>
     <div class="page">
-      <div class="popup">
-        <div class="popup__overlay"></div>
-        <form class="popup__container">
-          <button class="popup__close-button button"></button>
-          <p class="popup__description">Editar perfil</p>
-          <fieldset class="popup__form">
-            <input
-              class="popup__form-element"
-              placeholder="Nombre"
-              type="text"
-              id="input-name"
-            />
-            <input
-              class="popup__form-element"
-              placeholder="Acerca de mí"
-              type="text"
-              id="input-tag"
-            />
-          </fieldset>
-          <button class="popup__save-button button" type="submit">
-            Guardar
-          </button>
-        </form>
-      </div>
-      <nav class="nav">
-        <img
-          class="nav__logo"
-          src="images/logo.svg"
-          alt="logo around the US "
-        />
-      </nav>
       <header class="header">
         <img
-          class="header__avatar"
-          src="./images/perfil.png"
-          alt="foto de perfil"
+          src="./images/Vector.png"
+          alt="Imagen de Around US"
+          class="header__vector"
         />
-        <div class="header__profile">
-          <h2 class="header__profile-name">Kenny Chan</h2>
-          <button class="header__profile-button button"></button>
-          <p class="header__profile-tag">Diseñador web</p>
-        </div>
-        <button class="header__add-button button" type="submit"></button>
+        <img
+          src="./images/Line.png"
+          alt="Imagen de la linea"
+          class="header__line"
+        />
       </header>
-      <main class="content">
-        <div class="content__grid">
-          <div class="card">
-            <img
-              class="card__image"
-              src="images/yosemite.jpg"
-              alt="pinos en el Valle de Yosemite"
-            />
-            <div class="card__footer">
-              <p class="card__title">Valle de Yosemite</p>
-              <button class="card__like button"></button>
+    </div>
+    <main class="content">
+      <section class="profile">
+        <div class="profile__content">
+          <div class="profile__info">
+            <div class="profile__avatar">
+              <img
+                src="./images/perfil.png"
+                alt="Imagen de perfil"
+                class="profile__avatar-image"
+              />
             </div>
-          </div>
-          <div class="card">
-            <img
-              class="card__image"
-              src="images/lago-louise.jpg"
-              alt="Agua cristalina del Lago Louise"
-            />
-            <div class="card__footer">
-              <p class="card__title">Lago Louise</p>
-              <button class="card__like button"></button>
+            <div class="profile__info-content">
+              <h1 class="profile__info-name">KENNY CHAN</h1>
+              <p class="profile__info-description">Desarrollador Web</p>
             </div>
-          </div>
-          <div class="card">
-            <img
-              class="card__image"
-              src="images/montaña-calva.jpg"
-              alt="Atardecer en las Montañas Calvas"
-            />
-            <div class="card__footer">
-              <p class="card__title">Montañas Calvas</p>
-              <button class="card__like button"></button>
-            </div>
-          </div>
-          <div class="card">
-            <img
-              class="card__image"
-              src="images/latemar.jpg"
-              alt="Anochecer en las Montañas de Latemar"
-            />
-            <div class="card__footer">
-              <p class="card__title">Latemar</p>
-              <button class="card__like button"></button>
-            </div>
-          </div>
-          <div class="card">
-            <img
-              class="card__image"
-              src="images/vanois.jpg"
-              alt="lago de Vanoise National Park"
-            />
-            <div class="card__footer">
-              <p class="card__title">Vanoise National Park</p>
-              <button class="card__like button"></button>
-            </div>
-          </div>
-          <div class="card">
-            <img
-              class="card__image"
-              src="images/lago_di.jpg"
-              alt="Canoas en el lago de Braies"
-            />
-            <div class="card__footer">
-              <p class="card__title">Lago de Braies</p>
-              <button class="card__like button"></button>
-            </div>
+            <button class="profile__info-button"></button>
           </div>
         </div>
-      </main>
+        <button class="profile__info-button-add"></button>
+      </section>
+      <section class="elements"></section>
+      <section class="popup">
+        <div class="popup__container">
+          <h2 class="popup__form-title">Editar perfil</h2>
+          <form class="popup__form" novalidate>
+            <input
+              class="popup__input popup__form-name"
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Nombre"
+              required
+              minlength="2"
+              maxlength="40"
+            />
+            <span class="popup__input-error" id="name-error"></span>
+            <input
+              class="popup__input popup__form-occupation"
+              type="text"
+              id="occupation"
+              name="occupation"
+              placeholder="Acerca de mi"
+              required
+              minlength="2"
+              maxlength="200"
+            />
+            <span class="popup__input-error" id="occupation-error"></span>
+            <button type="submit" class="popup__form-button">Guardar</button>
+          </form>
+        </div>
+        <div class="popup__button-close"></div>
+      </section>
+      <section class="popup-add">
+        <div class="popup-add__container">
+          <h2 class="popup-add__form-title">Nuevo Lugar</h2>
+          <form class="popup-add__form" novalidate>
+            <input
+              class="popup__input popup-add__form-place"
+              type="text"
+              id="place"
+              name="place"
+              placeholder="Título"
+              required
+              minlength="2"
+              maxlength="30"
+            />
+            <span class="popup__input-error" id="place-error"></span>
+            <input
+              class="popup__input popup-add__form-url"
+              type="url"
+              id="url"
+              name="url"
+              placeholder="Enlace a la imagen"
+              required
+            />
+            <span class="popup__input-error" id="url-error"></span>
+            <button type="submit" class="popup-add__form-button-create">
+              Crear
+            </button>
+          </form>
+        </div>
+        <div class="popup-add__button-close"></div>
+      </section>
+      <section class="elements__popup">
+        <div class="elements__popup-container">
+          <img src="" alt="" class="elements__popup-img" />
+          <button class="elements__popup-button-close"></button>
+          <p class="elements__popup-text"></p>
+        </div>
+      </section>
+      <template id="card__template">
+        <div class="elements__card">
+          <button class="elements__card-delete"></button>
+          <img class="elements__card-image" />
+          <div class="elements__card-text">
+            <p class="elements__card-name"></p>
+            <button class="elements__card-like"></button>
+          </div>
+        </div>
+      </template>
       <footer class="footer">
-        <p class="footer__copyright">2025 Kenny Chan</p>
+        <p class="footer__copyright">&#169; 2025 Around The U.S.</p>
       </footer>
-    </div>
-    <script src="./scripts/index.js"></script>
+    </main>
+    <script src="scripts/index.js"></script>
   </body>
 </html>
