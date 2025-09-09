@@ -17,7 +17,7 @@
 .popup-add__container {
   max-width: 430px;
   width: 100%;
-  max-height: 330px;
+  max-height: 345px;
   height: 100%;
   background: #ffffff;
   border-radius: 10px;
@@ -112,7 +112,7 @@
   .popup-add__container {
     max-width: 282px;
     width: 100%;
-    max-height: 322px;
+    max-height: 360px;
     height: 100%;
   }
 
