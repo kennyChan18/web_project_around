@@ -1,5 +1,3 @@
-import { config, formValidators } from "./index.js";
-
 class FormValidator {
   constructor(config, formElement) {
     this._config = config;
@@ -95,4 +93,20 @@ const resetFormAndValidation = (modal) => {
   });
 };
 
+const validationConfig = {
+  formSelector: ".popup__form",
+  inputSelector: ".popup__input",
+  submitButtonSelector: ".popup__button",
+  inactiveButtonClass: "popup__button_disabled",
+  inputErrorClass: "popup__input_type_error",
+  errorClass: "popup__error_visible",
+};
+const formElements = document.querySelectorAll(validationConfig.formSelector);
+const formValidators = [];
+
+formElements.forEach((formElement) => {
+  const formValidator = new FormValidator(validationConfig, formElement);
+  formValidator.enableValidation();
+  formValidators.push(formValidator);
+});
 export { FormValidator, resetFormAndValidation as reset };

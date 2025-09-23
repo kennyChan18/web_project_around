@@ -55,10 +55,4 @@ const cardsAdd = (titleValue, linkValue, cardSelector) => {
   gallery.prepend(userCard);
 };
 
-formElements.forEach((formElement) => {
-  const formValidator = new FormValidator(validationConfig, formElement);
-  formValidator.enableValidation();
-  formValidators.push(formValidator);
-});
-
-export { cardsAdd as add, validationConfig as config, formValidators };
+export { cardsAdd as add, validationConfig as config };
