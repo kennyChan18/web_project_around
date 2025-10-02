@@ -1,4 +1,4 @@
-class FormValidator {
+export default class FormValidator {
   constructor(config, formElement) {
     this._config = config;
     this._formElement = formElement;
@@ -93,7 +93,7 @@ const resetFormAndValidation = (modal) => {
   });
 };
 
-const validationConfig = {
+export const validationConfig = {
   formSelector: ".popup__form",
   inputSelector: ".popup__input",
   submitButtonSelector: ".popup__button",
@@ -101,8 +101,10 @@ const validationConfig = {
   inputErrorClass: "popup__input_type_error",
   errorClass: "popup__error_visible",
 };
-const formElements = document.querySelectorAll(validationConfig.formSelector);
-const formValidators = [];
+export const formElements = document.querySelectorAll(
+  validationConfig.formSelector
+);
+export const formValidators = [];
 
 formElements.forEach((formElement) => {
   const formValidator = new FormValidator(validationConfig, formElement);
