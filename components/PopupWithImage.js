@@ -1,19 +1,28 @@
-import Popup from "./Popup.js";
-import { formAdd, formEd } from "./utils.js";
+import { Popup } from "./Popup.js";
 
-export default class PopupWithImage extends Popup {
-  constructor(popupSelector, popimage, poptext) {
+export class PopupWithImage extends Popup {
+  constructor(popupSelector) {
     super(popupSelector);
-    this._imageElement = popimage;
-    this._captionElement = poptext;
+    this._imageElement = this._popup.querySelector(".bigimage-ils");
+    this._titleElement = this._popup.querySelector(".bigimage-title");
+    this._closeButton = this._popup.querySelector(".bigimage-close");
   }
 
-  open(src, caption) {
-    this._imageElement.src = src;
-    this._imageElement.alt = caption;
-    this._captionElement.textContent = caption;
-    formAdd.classList.toggle("popup__item-hidden");
-    formEd.classList.toggle("popup__item-hidden");
+  open(imageSrc, title) {
+    this._imageElement.src = imageSrc;
+    this._imageElement.alt = title;
+    this._titleElement.textContent = title;
+    this._popup.classList.add("popup__opened");
     super.open();
+  }
+
+  close() {
+    this._popup.classList.remove("popup__opened");
+    super.close();
+  }
+
+  setEventListeners() {
+    super.setEventListeners();
+    this._closeButton.addEventListener("click", () => this.close());
   }
 }

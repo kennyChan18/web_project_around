@@ -7,92 +7,205 @@
     <meta name="keywords" content="html, css, javascript, responsive" />
     <meta name="author" content="Kenny Chan" />
     <title>Around the World</title>
-    <link rel="shortcut icon" href="favicon.ico" />
     <link rel="stylesheet" href="./page/index.css" />
+    <link rel="shortcut icon" href="favicon.ico" />
   </head>
   <body>
     <div class="page">
-      <div class="popup">
-        <div class="popup__container">
-          <button type="button" class="popup__button popup__button_close">
-            🞩
-          </button>
-          <div class="popup__images">
-            <div class="popup__content-image">
-<img class="popup__image" src="./images/lago-braies.png" alt="Lago di Braies">
-            </div>
-            <div class="popup__paragraph-content">
-              <p class="popup__paragraph"></p>
-            </div>
-          </div>
-          <form class="popup__form form-edit" novalidate="">
-            <h2 class="popup__subtitle">Editar perfil</h2>
-            <fieldset class="popup__content">
-              <label class="popup__field">
-                <input type="text" class="popup__input popup__input_name" placeholder="Nombre" minlength="2" maxlength="40" id="name-input" required="">
-                <span class="popup__input-error name-input-error"></span>
-              </label>
-              <label class="popup__field">
-                <input type="text" class="popup__input popup__input_about" placeholder="Acerca de mi" minlength="2" maxlength="200" id="about-input" required="">
-                <span class="popup__input-error about-input-error"></span>
-              </label>
-              <button type="submit" class="popup__button popup__button_save popup__button_disabled" disabled="">
-                Guardar
-              </button>
-            </fieldset>
-          </form>
-          <form class="popup__form form-add" novalidate="">
-            <h2 class="popup__subtitle">Nuevo lugar</h2>
-            <fieldset class="popup__content">
-              <label class="popup__field">
-                <input type="text" class="popup__input popup__input_title" placeholder="Titulo" minlength="2" maxlength="30" id="title-input" required="">
-                <span class="popup__input-error title-input-error"></span>
-              </label>
-              <label class="popup__field">
-                <input type="url" class="popup__input popup__input_url" placeholder="URL a la imagen" id="url-input" required="">
-                <span class="popup__input-error url-input-error"></span>
-              </label>
-              <button type="submit" class="popup__button popup__button_add popup__button_disabled" disabled="">
-                Guardar
-              </button>
-            </fieldset>
-          </form>
-        </div>
-      </div>
       <header class="header">
-        <img src="../images/Vector.png" alt="logo-page" class="header__image">
+        <img
+          src="./images/Vector.png"
+          alt="vector around"
+          class="header__image"
+        />
+        <img
+          src="./images/Line.png"
+          alt="imagen linea"
+          class="header__image-line"
+        />
       </header>
-      <main class="main">
-        <div class="main__profile">
-          <div class="main__content-image">
-            <img src="../images/perfil.png" alt="profile-image" class="main__profile-image">
-          </div>
-          <div class="main__content-paragraph">
-            <p class="main__paragraph main__paragraph_name">KENNY CHAN</p>
-            <p class="main__paragraph main__paragraph_about">Desarrollador Web</p>
-            <button type="button" class="main__button main__button_edit">
-              🖌
+      <main class="content">
+        <section class="profile">
+          <div class="profile__avatar-container">
+            <img
+              src="./images/perfil.png"
+              alt="foto de perfil"
+              class="profile__avatar"
+              id="avatar"
+              loading="lazy"
+            />
+            <button class="profile__avatar-edit-icon">
+              <img src="./images/edit-avatar.png" alt="Icono editar" />
             </button>
           </div>
-          <button type="button" class="main__button main__button_add">
-            🞣
-          </button>
-        </div>
-        <div class="main__gallery"></div>
-      </main>
-      <template id="main__template">
-        <div class="main__gallery-card">
-          <img class="main__gallery-image">
-          <button type="button" class="main__button main__button_trash"></button>
-          <div class="main__gallery-content">
-            <p class="main__gallery-paragraph"></p>
-            <button type="button" class="main__button main__button_like"></button>
+          <div class="profile__info">
+            <p class="profile__info-name" id="name"></p>
+            <img
+              class="profile__edit-button"
+              src="./images/Edit Button.png"
+              alt="Icono editar perfil"
+              id="edit-button"
+            />
+            <p class="profile__info-ocupation" id="about"></p>
+            <img
+              src="./images/agregar.png"
+              alt="icono adicionar informacion"
+              class="profile__add-button"
+            />
           </div>
-        </div>
-      </template>
-     <footer class="footer">
-        <p class="footer__copyright">&#169; 2025 Around The U.S.</p>
+        </section>
+        <section class="cards">
+          <div class="cards__container">
+            <ul class="cards__list"></ul>
+            <template id="card-template">
+              <div class="cards__item">
+                <img
+                  class="cards__item-delete"
+                  src="./images/Trash.png"
+                  alt="Icono eliminar"
+                />
+                <img class="cards__item-img" src=" " alt="Foto de referencia" />
+                <div class="cards__item-info">
+                  <p class="cards__item-name"></p>
+                  <img
+                    class="cards__item-like"
+                    src="./images/Like.png"
+                    alt="Boton like"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </template>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <p class="footer-copyright">&#169; 2025 Around The U.S.</p>
       </footer>
-    <script type="module" src="./page/index.js"></script>
+    </div>
+    <section class="popup" id="edit-profile">
+      <div class="popup__container">
+        <img
+          class="popup-close"
+          id="popup-close"
+          src="./images/Close Icon.png"
+          alt="icono cerrar formulario"
+        />
+        <form
+          class="popup__form"
+          id="popup-form-edit-profile"
+          name="edit-profile"
+          novalidate
+        >
+          <h2 class="popup__form-title"></h2>
+          <input
+            class="popup__input popup__form-first"
+            id="first"
+            name="first"
+            minlength="2"
+            maxlength="40"
+            required
+          />
+          <span class="popup__input-error" id="first-error"></span>
+          <input
+            class="popup__input popup__form-second"
+            id="second"
+            name="second"
+            minlength="2"
+            maxlength="200"
+            required
+          />
+          <span class="popup__input-error" id="second-error"></span>
+          <button id="button" class="popup__button" type="submit"></button>
+        </form>
+      </div>
+    </section>
+    <section class="popup" id="add-card">
+      <div class="popup__container">
+        <img
+          class="popup-close"
+          id="popup-close"
+          src="./images/Close Icon.png"
+          alt="icono cerrar formulario"
+        />
+        <form
+          class="popup__form"
+          id="popup-form-add-card"
+          name="add-card"
+          novalidate
+        >
+          <h2 class="popup__form-title"></h2>
+          <input
+            class="popup__input popup__form-first"
+            type="text"
+            id="name"
+            name="name"
+            minlength="2"
+            maxlength="40"
+            required
+          />
+          <span class="popup__input-error" id="name-error"></span>
+          <input
+            class="popup__input popup__form-second"
+            type="url"
+            id="link"
+            name="link"
+            minlength="2"
+            maxlength="200"
+            required
+          />
+          <span class="popup__input-error" id="link-error"></span>
+          <button id="button" class="popup__button" type="submit"></button>
+        </form>
+      </div>
+    </section>
+    <section id="bigimage" class="bigimage">
+      <img
+        class="bigimage-close"
+        src="./images/Close Icon.png"
+        alt="Icono cerrar imagen"
+      />
+      <div class="bigimage__form">
+        <img class="bigimage-ils" src=" " alt="Foto de referencia" />
+        <p class="bigimage-title"></p>
+      </div>
+    </section>
+    <section class="popup" id="popup-change-avatar">
+      <img
+        class="popup-close"
+        src="./images/Close Icon.png"
+        alt="Icono cerrar imagen"
+      />
+      <form
+        class="popup__form"
+        id="popup-form-change-avatar"
+        name="change-avatar"
+        novalidate
+      >
+        <h2 class="popup__form-title"></h2>
+        <input
+          class="popup__input"
+          name="avatar"
+          id="avatar"
+          type="url"
+          placeholder="Enlace al avatar"
+          required
+        />
+        <span class="popup__input-error" id="avatar-error"></span>
+        <button class="popup__button" type="submit"></button>
+      </form>
+    </section>
+    <section class="popup" id="popup-delete-card">
+      <img
+        class="popup-close"
+        src="./images/Close Icon.png"
+        alt="Icono cerrar imagen"
+      />
+      <form class="popup__form" id="delete-card-form" novalidate>
+        <h2 class="popup__form-title">¿Estas seguro?</h2>
+        <button class="popup__button" type="submit">Si</button>
+      </form>
+    </section>
+    <script src="./page/index.js" type="module"></script>
   </body>
 </html>
